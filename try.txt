@@ -1,0 +1,32 @@
+from flask import Flask, g
+import sqlite3
+
+app = Flask(__name__)
+DATABASE = 'example.db'  # Path to your SQLite database
+
+# Function to get the database connection
+def get_db():
+    if not hasattr(g, 'sqlite_db'):
+        g.sqlite_db = sqlite3.connect(DATABASE)
+    return g.sqlite_db
+
+# Close the database connection after each request
+@app.teardown_appcontext
+def close_db(error):
+    if hasattr(g, 'sqlite_db'):
+        g.sqlite_db.close()
+
+# A route to check the connection and interact with the database
+@app.route('/')
+def home():
+    db = get_db()  # Get the DB connection
+    cursor = db.cursor()
+    
+    # Example: Retrieve all rows from a table named 'users'
+    cursor.execute('SELECT * FROM users')
+    users = cursor.fetchall()
+    
+    return f"Users: {users}"
+
+if __name__ == '__main__':
+    app.run(debug=True)
