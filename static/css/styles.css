@@ -52,3 +52,37 @@
         #about { background: lightcoral; }
         #services { background: lightgreen; }
         #contact { background: lightgoldenrodyellow; }
+
+        /* services section */
+        .services-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-table th, .services-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .services-table th {
+            background: #333;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .services-table tr:hover {
+            background: #f1f1f1;
+        }
+
+        .services-table img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+        }

@@ -1,0 +1,26 @@
+That's a great mindset! Here are some of the best websites to help you learn programming and grow your skills:
+
+📌 Interactive Learning & Courses
+✅ freeCodeCamp – Hands-on coding challenges and full courses on web development, Python, and more.
+✅ CS50 by Harvard – Free, high-quality computer science fundamentals.
+✅ The Odin Project – A great roadmap for full-stack web development.
+✅ MDN Web Docs – Best for learning JavaScript, HTML, and CSS.
+✅ Khan Academy – Computer Programming – Beginner-friendly interactive lessons.
+
+📌 Coding Practice & Challenges
+✅ LeetCode – Best for coding interview prep and data structures & algorithms.
+✅ HackerRank – Solve real-world coding problems in different languages.
+✅ Codewars – Fun, gamified coding challenges to sharpen problem-solving skills.
+✅ Project Euler – Math-based programming challenges for logic building.
+
+📌 Documentation & References
+✅ W3Schools – Beginner-friendly tutorials on web technologies.
+✅ MDN Web Docs – The best for JavaScript, HTML, and CSS documentation.
+✅ GeeksforGeeks – In-depth articles on algorithms, data structures, and system design.
+
+📌 Real-World Project Ideas & Open Source
+✅ Frontend Mentor – Real-world front-end challenges.
+✅ Build Your Own X – Guides to building your own search engine, database, game, etc.
+✅ GitHub Explore – Find open-source projects to contribute to.
+
+Would you like help choosing where to start based on your current knowledge level? 😊
