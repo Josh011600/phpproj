@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <title>Document</title>
+    <script src="{{ url_for('static', filename='sscript.js') }}"></script>
+    <title>My website</title>
 </head>
 <body>
-    <button class="button" id="myCheck" onclick="myFunction()">button</button>
-    <h1> Hello world</h1>
-</body>
-<script>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-</script>
+    <div id="home" class="section">
+        <img src="{{ url_for('static', filename='images/Joshua.png') }}" class="image1">
+        <p>
+            Welcome to my portfolio.<br>
+            I'm <div class="typing-container" id="typing"></div>
+        </p>
+        
+    </div>
+    <div id="about" class="section">
+        About Section
+
+    </div>
+    <div id="services" class="section">Services Section</div>
+    <div id="contact" class="section">Contact Section</div>
+     
+</body>
+
 </html>
