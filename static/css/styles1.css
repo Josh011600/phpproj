@@ -1,0 +1,159 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Body Setup */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Typing Container */
+.typing-container {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: fit-content;
+}
+
+/* Navbar */
+.navbar {
+    background: #333;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1000; /* Ensure navbar stays on top */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background: #555;
+}
+
+/* Section Setup */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw; /* Use viewport width for scalable font size */
+    padding-top: 60px; /* Adjust for fixed navbar */
+    text-align: center;
+    width: 100%; /* Ensure section takes up full width */
+    overflow: hidden; /* Prevent overflow beyond section */
+}
+
+/* Different Section Colors */
+#home { background: lightblue; }
+#about { background: lightcoral; }
+#services { background: lightgreen; }
+#contact { background: lightgoldenrodyellow; }
+
+/* Services Table */
+.services-table-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    margin: 20px 0; /* Add space above and below the table */
+}
+
+.services-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.services-table th, .services-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.services-table th {
+    background: #333;
+    color: white;
+    text-transform: uppercase;
+}
+
+.services-table tr:hover {
+    background: #f1f1f1;
+}
+
+.services-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: row; /* Keep navbar in a row for medium screens */
+        justify-content: space-around;
+    }
+
+    .section {
+        font-size: 4vw; /* Use larger font size for smaller screens */
+        padding-top: 80px; /* Adjust for navbar */
+    }
+
+    .services-table {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar links vertically */
+        align-items: center;
+    }
+
+    .navbar a {
+        padding: 8px 15px;
+        margin: 5px 0;
+    }
+
+    .section {
+        font-size: 5vw; /* Further scale down font size */
+        height: auto; /* Allow sections to grow as needed */
+        padding-top: 80px; /* Adjust for navbar */
+    }
+
+    .services-table img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        font-size: 6vw; /* Adjust font size for smaller screens */
+        padding-top: 90px; /* Adjust for navbar */
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .services-table img {
+        width: 50px;
+        height: 50px;
+    }
+}
