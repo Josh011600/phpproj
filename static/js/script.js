@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const name = "Joshua Saculo";
+  const name = "Welcome to my portfolio!";
   let index = 0;
   let typingElement = document.getElementById("typing");
 
