@@ -24,11 +24,12 @@
         margin-bottom: 20;
        }
        .container{
-        align-items: center;
+        align-items: flex;
         justify-content: center;
         background-color: blue;
         display: table;
         
         max-width: 100%;
+        max-height: ;
         margin: 5,5,0,0;
        }
