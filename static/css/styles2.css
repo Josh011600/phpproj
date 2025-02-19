@@ -1,0 +1,34 @@
+
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+       .label1{
+        background-color: rgb(177, 61, 61);
+        display: table;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5;
+       }
+       .text_Box1{
+        background-color: #fff;
+        display: table;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20;
+       }
+       .container{
+        align-items: center;
+        justify-content: center;
+        background-color: blue;
+        display: table;
+        
+        max-width: 100%;
+        margin: 5,5,0,0;
+       }
