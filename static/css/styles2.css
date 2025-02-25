@@ -11,6 +11,11 @@
         
         }
  /*Overall design End*/
+ table, th, td {
+    
+    border: 2px solid black;
+    margin: 5 5 5 5;
+  }
         body {
             font-family: Arial, sans-serif;
             background-color: rgb(240, 240, 240);
@@ -66,7 +71,13 @@
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
     #datetime {
-        font-size: 1em;
+        font-size: 0.5em;
         font-weight: bold;
     }
      /* for time and date end*/
+
+     /* for table design*/
+     #myTable
+     {
+        font-size: 2em;
+     }
