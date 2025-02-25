@@ -1,3 +1,4 @@
+<!-- Goal of the project 2/25/2025-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +9,27 @@
     <title>Todo app</title>
 </head>
 <body>
+    <h1 class="heading">TASKS</h1>
+    <!--
+    <h3>Goal:</h3><p>This app will display records and will 
+        create task list for the user inside the table</p>-->
+    <!--Main function as of 2/25/2025-->
     <div class="container">
-    <label for="enter_Text" class="label1">Enter a schedule</label><br>
-    <input type="text" class="text_Box1" for="textbox"><br>
+    <label for="enter_Text" class="label1">ENTER SOME TASKS</label>
+    <input type="text" class="text_Box1" for="textbox">
     <button class="add_Button" onclick="myFunction()">ADD</button>
     </div>
     <table id="myTable">
-        <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
+        <tr class="headings_for_table">
+            <th>Time and Date Today</th>
+            <th>Id</th>
+            <th>Name of task</th>
+            <th>Date of Schedule</th>
           </tr>
        <tr id="table_content">
-
+        <div class="container">
+            <p id="datetime"></p>
+        </div>
        </tr>
       </table>
       <br>

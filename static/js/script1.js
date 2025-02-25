@@ -1,8 +1,18 @@
-function myFunction() {
-    var table = document.getElementById("table_content");
-    var row = table.insertRow(0);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = "NEW CELL1";
-    cell2.innerHTML = "NEW CELL2";
-  }
+/* for time and date */
+function updateDateTime() {
+  const now = new Date();
+  const options = { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric', 
+      hour: '2-digit', 
+      minute: '2-digit', 
+      second: '2-digit' 
+  };
+  document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
+}
+
+setInterval(updateDateTime, 1000); // Update every second
+updateDateTime(); // Initial call to display immediately
+/* for time and date end */
