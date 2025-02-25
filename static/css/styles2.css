@@ -1,35 +1,72 @@
 
-       * {
+      /*Overall design*/
+      * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
+            text-align: center;
+       
+       
+        
         }
-
+ /*Overall design End*/
         body {
             font-family: Arial, sans-serif;
+            background-color: rgb(240, 240, 240);
+            text-align: center;
+            align-items: center;
         }
-       .label1{
-        background-color: rgb(177, 61, 61);
-        display: table;
-        align-items: center;
-        justify-content: center;
-        margin-top: 5;
+       
+       .heading{
+        color: rgb(145, 22, 22);
+        margin-top: 15%;
        }
-       .text_Box1{
-        background-color: #fff;
-        display: table;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20;
+       .heading:hover{
+        opacity: 0.5;
+       
        }
-       .container{
-        align-items: flex;
-        justify-content: center;
-        background-color: blue;
-        display: table;
+       .container
+       {
+        border-style: solid;
+        border-radius: 3em;
+        margin: 5px 5px 5px 5px;
+       }
+       .label1
+       {
+        font-size: 2em;
         
-        max-width: 100%;
-        max-height: ;
-        margin: 5,5,0,0;
        }
+       .text_Box1
+       {
+        font-size: 2em;
+       }
+       .add_Button
+       {
+        font-size: 2em;
+       }
+       .add_Button:hover
+       {
+       
+        opacity: 0.7;
+        background-color: aquamarine;
+       }
+       .label1, .text_Box1, .add_Button{
+        margin-top: .5em;
+        margin-bottom: 0.3em;
+       }
+
+       /* for time and date*/
+
+       .container1 {
+        padding: 20px;
+        background-color: #b6bfd4;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    #datetime {
+        font-size: 1em;
+        font-weight: bold;
+    }
+     /* for time and date end*/
