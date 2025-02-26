@@ -13,6 +13,38 @@ function updateDateTime() {
   document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
 }
 
-setInterval(updateDateTime, 1000); // Update every second
+ // Update every second
 updateDateTime(); // Initial call to display immediately
 /* for time and date end */
+
+/* for appendchild test*/
+const addButton = document.querySelector(".add_Button"); // Selecting the ADD button
+const specificTask = document.getElementById("txtTask").value;
+    const datetime = document.getElementById("party").value;
+
+    if (!specificTask || !datetime) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Create a new row with the correct data
+    const newRow = `
+        <tr>
+            <td>${new Date().toLocaleString()}</td>
+            <td>0</td>
+            <td>${specificTask}</td>
+            <td>${datetime}</td>
+            <td>
+                <button class="done_btn">Done</button>
+                <button class="edit_btn">Edit</button>
+                <button class="remove_btn">Remove</button>
+                <button class="clear_btn">Clear</button>
+            </td>
+        </tr>`;
+
+    // Append row to tbody
+    tbodyEl.innerHTML += newRow;
+}
+
+// Attach event listener to the ADD button
+addButton.addEventListener("click", onAddWebsite);

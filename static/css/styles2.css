@@ -64,7 +64,7 @@ header a {
 
 /* Set width for mobile/smaller screen size. */
 /* I set it big here so I don't have to shrink the screen so much */
-/* for testing purposes */
+/* for testing purposes 
 @media screen and (max-width: 1100px) {
   
   header {
@@ -169,7 +169,7 @@ header a {
 }
 
 
-
+*/
 /* navigation bar design */
 
 
@@ -184,18 +184,13 @@ header a {
        .container
        {
         border-style: solid;
-        border-radius: 3em;
-        margin: 5px 5px 5px 5px;
        }
        .label1
        {
         font-size: 2em;
         
        }
-       .text_Box1
-       {
-        font-size: 2em;
-       }
+       
        .add_Button
        {
         font-size: 2em;
@@ -219,6 +214,7 @@ header a {
         border-radius: 15px;
         text-align: center;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        margin: auto;
     }
     #datetime {
         font-size: 0.5em;
@@ -226,9 +222,38 @@ header a {
     }
      /* for time and date end*/
 
+
      /* for table design*/
      #myTable
      {
         font-size: 2em;
-	border-width: thin;
+	      border-width: thin;
+        max-width: 100%;
+        margin: auto;
      }
+
+     /*table design end */
+     /*table TD design*/
+     .td, input {
+      font-size: 1em;
+     }
+      /*table TD design end*/
+
+      /*td buttons design*/
+      .done_btn{
+        font-size: 1em;
+        margin: auto;
+      }
+      .edit_btn{
+        font-size: 1em;
+        margin: auto;
+      }
+      .remove_btn{
+        font-size: 1em;
+        margin: auto;
+      }
+      .clear_btn{
+        font-size: 1em;
+        margin: auto;
+      }
+      /*td buttons design end*/

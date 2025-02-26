@@ -9,7 +9,7 @@
     <title>Todo app</title>
 </head>
 <body>
-
+<!--
 	<header>
   <h1><a href="#">Logo here</a></h1>
 
@@ -24,17 +24,20 @@
     <a class='nav-item' href="#">Contact</a>
   </nav> 
 </header>
-
-    <h1 class="heading">TASKS</h1>
+-->
+    <h1 class="heading">TASK SCHEDULER</h1>
     <!--
     <h3>Goal:</h3><p>This app will display records and will 
         create task list for the user inside the table</p>-->
     <!--Main function as of 2/25/2025-->
     <div class="container">
-    <label for="enter_Text" class="label1">ENTER SOME TASKS</label>
-    <input type="text" class="text_Box1" for="textbox">
-    <button class="add_Button" onclick="myFunction()">ADD</button>
-    </div>
+    <label for="schedule" class="label1">ADD TASK SCHEDULE</label>
+    
+    <button class="add_Button">ADD</button>
+    <input type="text" class="txtTask" id="txtTask" placeholder="Enter task"></input>
+    <input id="party" type="datetime-local" name="party-date" value="2017-06-01T08:30" />
+  </div>
+    <h1 class="task_list_title">Task List</h1>
     <table id="myTable">
         <tr class="headings_for_table">
             <th>Time and Date Today</th>
@@ -42,20 +45,12 @@
             <th>Id</th>
             <th>Name of task</th>
             <th>Schedule date of task</th>
+            <th>Action</th>
           </tr>
           <br>
-       <tr class="container">
+       <tbody>
         
-            <td id="datetime"></td>
-            <td>0</td>
-            <td>task1</td>
-            <td><input
-                id="party"
-                type="datetime-local"
-                name="party-date"
-                value="2017-06-01T08:30" /></td>
-            <td></td>
-       </tr>
+            </tbody>
       </table>
       <br>
 </body>
