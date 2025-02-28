@@ -1,5 +1,5 @@
 /* for time and date */
-function updateDateTime() {
+/*function updateDateTime() {
   const now = new Date();
   const options = { 
       weekday: 'long', 
@@ -17,7 +17,7 @@ function updateDateTime() {
 updateDateTime(); // Initial call to display immediately
 /* for time and date end */
 
-/* for appendchild test*/
+/* for appendchild test
 const addButton = document.querySelector(".add_Button"); // Selecting the ADD button
 const specificTask = document.getElementById("txtTask").value;
     const datetime = document.getElementById("party").value;
@@ -44,7 +44,12 @@ const specificTask = document.getElementById("txtTask").value;
 
     // Append row to tbody
     tbodyEl.innerHTML += newRow;
-
+}
 
 // Attach event listener to the ADD button
 addButton.addEventListener("click", onAddWebsite);
+*/
+x = 5;
+y = 6;
+z = x + y;
+document.getElementById("demo").innerHTML = "The value of z is: " + z;
