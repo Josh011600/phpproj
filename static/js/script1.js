@@ -24,7 +24,7 @@ const specificTask = document.getElementById("txtTask").value;
 
     if (!specificTask || !datetime) {
         alert("Please fill in all fields.");
-        return;
+       // return;
     }
 
     // Create a new row with the correct data
@@ -44,7 +44,7 @@ const specificTask = document.getElementById("txtTask").value;
 
     // Append row to tbody
     tbodyEl.innerHTML += newRow;
-}
+
 
 // Attach event listener to the ADD button
 addButton.addEventListener("click", onAddWebsite);

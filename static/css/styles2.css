@@ -6,8 +6,8 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
             text-align: center;
-       
-       
+            font-family: system-ui, "Segoe UI", Tahoma;
+            
         
         }
  /*Overall design End*/
@@ -194,6 +194,8 @@ header a {
        .add_Button
        {
         font-size: 2em;
+	max-width: 4em;
+	padding: 1rem;
        }
        .add_Button:hover
        {
@@ -205,7 +207,9 @@ header a {
         margin-top: .5em;
         margin-bottom: 0.3em;
        }
-
+	.txtTask {
+	font-size: 2em;
+	}
        /* for time and date*/
 
        .container {
