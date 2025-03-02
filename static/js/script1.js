@@ -1,5 +1,5 @@
 /* for time and date */
-/*function updateDateTime() {
+function updateDateTime() {
   const now = new Date();
   const options = { 
       weekday: 'long', 
@@ -49,7 +49,17 @@ const specificTask = document.getElementById("txtTask").value;
 // Attach event listener to the ADD button
 addButton.addEventListener("click", onAddWebsite);
 */
-x = 5;
-y = 6;
-z = x + y;
-document.getElementById("demo").innerHTML = "The value of z is: " + z;
+function addTask()
+{
+let textinp = $('add_task').value;
+const node = document.createElement("td");
+
+// Create a text node:
+const textnode = document.createTextNode(textinp);
+
+// Append the text node to the "li" node:
+node.appendChild(textnode);
+
+// Append the "li" node to the list:
+document.getElementById("content_body").appendChild(node);
+}
