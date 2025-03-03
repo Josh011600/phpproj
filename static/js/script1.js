@@ -7,35 +7,7 @@
    // Update every second
    
 
-<<<<<<< HEAD
-=======
-function addTask()
-{
-    function updateDateTime() {
-        const now = new Date();
-        const options = { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric', 
-            hour: '2-digit', 
-            minute: '2-digit', 
-            second: '2-digit' 
-        };
-        document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
-      }
-let textinp = document.getElementById('add_task').value;
-const node = document.createElement("td");
-if (textinp.trim() === "") {
-    alert("Please enter a task.");
-    return;
-}
- // Create table row
- const row = document.createElement("tr");
- const cell = document.createElement("td");
- // Create a text node
- const textnode = document.createTextNode(textinp);
->>>>>>> 0a66c6f1cf15c1ec584743c28583eb50dfdaea34
+
 
     let taskId = 1; // Unique task ID
 
