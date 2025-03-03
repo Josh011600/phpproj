@@ -31,7 +31,6 @@ if (textinp.trim() === "") {
  // Create table row
  const row = document.createElement("tr");
  const cell = document.createElement("td");
- //var txt1 = document.getElementById("");
  // Create a text node
  const textnode = document.createTextNode(textinp);
 
