@@ -13,6 +13,7 @@
 
         function addTask() {
             const tableBody = document.querySelector("#taskTable tbody");
+            
 
             // Create row
             const row = document.createElement("tr");

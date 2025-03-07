@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch test.html",
+      "file": "${workspaceFolder}/templates/test.html"
+    }
+  ]
+}
