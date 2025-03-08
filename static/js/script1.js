@@ -1,50 +1,54 @@
-/* for time and date */
- // Initial call to display immediately
-/* for time and date end */
+let taskId = 1; // Unique task ID
 
+function addTask() {
+    const tableBody = document.querySelector("#taskTable tbody");
+    const taskInput = document.getElementById("add_task");
+    const dateInput = document.getElementById("party");
 
-  
-   // Update every second
-   
+    // Get values from input fields
+    const taskName = taskInput.value.trim();
+    const scheduleDate = dateInput.value;
+    const today = new Date().toLocaleString(); // Get current date and time
 
+    // Validate input
+    if (taskName === "" || scheduleDate === "") {
+        alert("Please enter a task and select a date.");
+        return;
+    }
 
+    // Create row
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${today}</td>
+        <td>${taskId}</td>
+        <td>${taskName}</td>
+        <td>${scheduleDate}</td>
+        <td>
+            <button onclick="editTask(this)">Edit</button>
+            <button onclick="removeTask(this)">Remove</button>
+        </td>
+    `;
 
-    let taskId = 1; // Unique task ID
+    // Append row to table
+    tableBody.appendChild(row);
 
-        function addTask() {
-            const tableBody = document.querySelector("#taskTable tbody");
-            
+    // Clear input fields
+    taskInput.value = "";
+    dateInput.value = "";
 
-            // Create row
-            const row = document.createElement("tr");
+    taskId++; // Increment task ID
+}
 
-            // Get today's date
-            const today = new Date().toISOString().split('T')[0];
+function editTask(button) {
+    const row = button.closest("tr");
+    const taskCell = row.children[2];
+    const newTaskName = prompt("Edit task:", taskCell.textContent);
+    if (newTaskName !== null) {
+        taskCell.textContent = newTaskName;
+    }
+}
 
-            // Create table columns
-            row.innerHTML = `
-                <td>${today}</td>
-                <td>${taskId}</td>
-                <td><input type="text" placeholder="Enter task"></td>
-                <td><input type="datetime-local"></td>
-                <td>
-                    <button onclick="editTask(this)">Edit</button>
-                    <button onclick="removeTask(this)">Remove</button>
-                </td>
-            `;
-
-            // Append row to table
-            tableBody.appendChild(row);
-            taskId++; // Increment task ID
-        }
-
-        function editTask(button) {
-            const row = button.closest("tr");
-            const taskInput = row.querySelector("input[type='text']");
-            taskInput.focus();
-        }
-
-        function removeTask(button) {
-            const row = button.closest("tr");
-            row.remove();
-        }
+function removeTask(button) {
+    const row = button.closest("tr");
+    row.remove();
+}

@@ -1,43 +1,86 @@
-<!-- Goal of the project 2/25/2025-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Scheduler</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}">
     <script src="{{ url_for('static', filename='js/script1.js') }}"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo app</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        .txtTask, #party {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .add_Button {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .add_Button:hover {
+            background: #218838;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="heading">TASK SCHEDULER</h1>
-    <!--
-    <h3>Goal:</h3><p>This app will display records and will 
-        create task list for the user inside the table</p>-->
-    <!--Main function as of 2/25/2025-->
+    <h1>Task Scheduler</h1>
     <div class="container">
-    <label for="task" class="label1">ADD TASK SCHEDULE</label>
-    
-    
-    <input type="text" name="task" class="txtTask" id="add_task" placeholder="Enter task"></input>
-    <input id="party" type="datetime-local" name="party-date" value="2017-06-01T08:30" />
-    <button class="add_Button" onclick="addTask()">ADD</button>
-  </div>
+        <label for="task" class="label1"><strong>Add Task Schedule</strong></label>
+        <input type="text" name="task" class="txtTask" id="add_task" placeholder="Enter task">
+        <input id="party" type="datetime-local" name="party-date" value="2025-06-01T08:30" />
+        <button class="add_Button" onclick="addTask()">Add Task</button>
+    </div>
     <h1 class="task_list_title">Task List</h1>
     <table id="taskTable">
-        <tr class="headings_for_table">
-            <th>Time and Date Today</th>
-            
-            <th>Id</th>
-            <th>Name of task</th>
-            <th>Schedule date of task</th>
-            <th>Action</th>
-          </tr>
-          <br>
-       <tbody>
-            </tbody>
-      </table>
-      <br>
-      <p id="demo"><p>
+        <thead>
+            <tr>
+                <th>Time and Date Today</th>
+                <th>ID</th>
+                <th>Task Name</th>
+                <th>Scheduled Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </body>
-
 </html>
