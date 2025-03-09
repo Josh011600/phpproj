@@ -24,8 +24,8 @@ function addTask() {
         <td>${taskName}</td>
         <td>${scheduleDate}</td>
         <td>
-            <button onclick="editTask(this)">Edit</button>
-            <button onclick="removeTask(this)">Remove</button>
+            <button onclick="editTask(this)" style="font-size: 2rem">Edit</button>
+            <button onclick="removeTask(this)" style="font-size: 2rem">Remove</button>
         </td>
     `;
 

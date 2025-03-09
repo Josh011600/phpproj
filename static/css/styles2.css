@@ -1,6 +1,63 @@
+*{
+  font-size: 1.5rem;
+}
 
-      /*Overall design*/
-      * {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+h1 {
+  color: #333;
+}
+.txtTask, #party {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.add_Button {
+  background: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.add_Button:hover {
+  background: #218838;
+}
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+th {
+  background: #007bff;
+  color: white;
+}
+     
+     
+     /*Overall design*/
+    /*  * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -11,7 +68,7 @@
         
         }
  /*Overall design End*/
- table, th, td {
+/* table, th, td {
     
     border: 2px solid black;
     margin: 5 5 5 5;
@@ -23,7 +80,7 @@
             align-items: center;
         }
        /* design for navigation */
-	header {
+	/*header {
   display: flex;
   width: 100%;
   background-color: aliceblue;
@@ -31,7 +88,7 @@
 
 header > * {
 /*   flex-grow: 1; */
-}
+/*}
 
 header h1 {
   margin-left: 1rem;
@@ -42,14 +99,14 @@ header a {
 }
 
 /* "Hide" checkbox -- moves it off screen*/
-#menu-btn {
+/*#menu-btn {
   position: absolute;
   top: -100%;
   left: -100%;
 }
 
 /* Hide hamburger for bigger screens */
-.menu-icon {
+/*.menu-icon {
   visibility: hidden;
 }
 
@@ -172,7 +229,7 @@ header a {
 */
 /* navigation bar design */
 
-
+/*
        .heading{
         color: rgb(145, 22, 22);
         margin-top: 15%;
@@ -211,7 +268,7 @@ header a {
 	font-size: 2em;
 	}
        /* for time and date*/
-
+/*
        .container {
         padding: 20px;
         background-color: #b6bfd4;
@@ -228,7 +285,7 @@ header a {
 
 
      /* for table design*/
-     #taskTable
+   /*  #taskTable
      {
         font-size: 2em;
 	      border-width: thin;
@@ -238,13 +295,13 @@ header a {
 
      /*table design end */
      /*table TD design*/
-     .td, input {
+   /*  .td, input {
       font-size: 1em;
      }
       /*table TD design end*/
 
       /*td buttons design*/
-      .done_btn{
+   /*   .done_btn{
         font-size: 1em;
         margin: auto;
       }
