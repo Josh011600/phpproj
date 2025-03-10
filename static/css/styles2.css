@@ -1,320 +1,103 @@
-*{
-  font-size: 1.5rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  height: 100vh;
 }
-.container {
-  background: white;
-  padding: 20px;
-  max-width: 500px;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-h1 {
-  color: #333;
-}
-.txtTask, #party {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.add_Button {
-  background: #28a745;
+.navbar {
+  width: 30%;
+  background: #333;
   color: white;
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
 }
-.add_Button:hover {
-  background: #218838;
+.navbar.hidden {
+  transform: translateX(-100%);
+}
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.nav-links {
+  list-style: none;
+  width: 100%;
+}
+.nav-links li {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  width: 100%;
+}
+.nav-links a:hover {
+  background: #555;
+  border-radius: 4px;
+}
+.content {
+  margin-left: 30%;
+  width: 70%;
+  padding: 20px;
+  text-align: right;
+  transition: margin-left 0.3s ease-in-out;
+}
+.content.shifted {
+  margin-left: 0;
+  width: 100%;
+}
+.task-container {
+  text-align: right;
+}
+.toggle-nav-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+}
+.toggle-nav-btn:hover {
+  background: #555;
 }
 table {
   width: 100%;
-  margin-top: 20px;
   border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
+  margin-top: 20px;
 }
 th, td {
-  padding: 10px;
   border: 1px solid #ddd;
+  padding: 8px;
+  text-align: right;
 }
 th {
-  background: #007bff;
+  background-color: #333;
   color: white;
 }
-     
-     
-     /*Overall design*/
-    /*  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-            text-align: center;
-            font-family: system-ui, "Segoe UI", Tahoma;
-            
-        
-        }
- /*Overall design End*/
-/* table, th, td {
-    
-    border: 2px solid black;
-    margin: 5 5 5 5;
+@media (max-width: 768px) {
+  .navbar {
+      width: 70%;
   }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(240, 240, 240);
-            text-align: center;
-            align-items: center;
-        }
-       /* design for navigation */
-	/*header {
-  display: flex;
-  width: 100%;
-  background-color: aliceblue;
-}
-
-header > * {
-/*   flex-grow: 1; */
-/*}
-
-header h1 {
-  margin-left: 1rem;
-}
-
-header a {
-  text-decoration: none;
-}
-
-/* "Hide" checkbox -- moves it off screen*/
-/*#menu-btn {
-  position: absolute;
-  top: -100%;
-  left: -100%;
-}
-
-/* Hide hamburger for bigger screens */
-/*.menu-icon {
-  visibility: hidden;
-}
-
-.menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 250px;
-  margin-right: 2rem;
-}
-
-
-/* Set width for mobile/smaller screen size. */
-/* I set it big here so I don't have to shrink the screen so much */
-/* for testing purposes 
-@media screen and (max-width: 1100px) {
-  
-  header {
-    display: grid;
-    grid-template-areas:
-       "title   title   hamburger"
-       "nav     nav     nav";
-  }
-  
-  h1 {
-    grid-area: title;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: black;
-  }
-
-  .menu-btn {
-    display: none;
-  }
-
-  .menu-icon {
-    grid-area: hamburger;
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    padding: 30px 20px 30px 0;
-    position: relative;
-    user-select: none;
-    visibility: visible;
-  }
-
-  .navicon {
-    background: #333;
-    display: block;
-    height: 2px;
-    width: 18px;
-    position: relative;
-  }
-
-  .navicon:before {
-    top: 5px;
-  }
-
-  .navicon:after {
-    top: -5px;
-  }
-
-  .navicon:before, .navicon:after {
-    background: #333;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: absolute;
-    transition: all .2s ease-out;
-  }
-
-  .menu {
-    grid-area: nav;
-    max-width: unset;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .menu a {
-    padding: 20px 20px;
-    border-right: 1px solid #f4f4f4;
-    background-color: #eee;
-    width: 100%;
-    text-align: center;
-  }
-
-  .menu-btn:checked ~ .menu {
-    max-height: 240px;
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon:before,
-  .menu-btn:checked ~ .menu-icon .navicon:after {
-    top: 0;
+  .content {
+      width: 100%;
+      margin-left: 0;
+      text-align: center;
   }
 }
-
-
-*/
-/* navigation bar design */
-
-/*
-       .heading{
-        color: rgb(145, 22, 22);
-        margin-top: 15%;
-       }
-       .heading:hover{
-        opacity: 0.5;
-       
-       }
-       .container
-       {
-        border-style: solid;
-       }
-       .label1
-       {
-        font-size: 2em;
-        
-       }
-       
-       .add_Button
-       {
-        font-size: 2em;
-	max-width: 4em;
-	padding: 1rem;
-       }
-       .add_Button:hover
-       {
-       
-        opacity: 0.7;
-        background-color: aquamarine;
-       }
-       .label1, .text_Box1, .add_Button{
-        margin-top: .5em;
-        margin-bottom: 0.3em;
-       }
-	.txtTask {
-	font-size: 2em;
-	}
-       /* for time and date*/
-/*
-       .container {
-        padding: 20px;
-        background-color: #b6bfd4;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        margin: auto;
-    }
-    #datetime {
-        font-size: 0.5em;
-        font-weight: bold;
-    }
-     /* for time and date end*/
-
-
-     /* for table design*/
-   /*  #taskTable
-     {
-        font-size: 2em;
-	      border-width: thin;
-        max-width: 100%;
-        margin: auto;
-     }
-
-     /*table design end */
-     /*table TD design*/
-   /*  .td, input {
-      font-size: 1em;
-     }
-      /*table TD design end*/
-
-      /*td buttons design*/
-   /*   .done_btn{
-        font-size: 1em;
-        margin: auto;
-      }
-      .edit_btn{
-        font-size: 1em;
-        margin: auto;
-      }
-      .remove_btn{
-        font-size: 1em;
-        margin: auto;
-      }
-      .clear_btn{
-        font-size: 1em;
-        margin: auto;
-      }
-      /*td buttons design end*/
