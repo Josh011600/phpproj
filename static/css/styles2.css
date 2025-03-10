@@ -25,8 +25,8 @@ body {
 .navbar.hidden {
   transform: translateX(-100%);
 }
-.navbar .logo {
-  font-size: 1.5em;
+.navbar .home {
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 20px;
 }
