@@ -39,6 +39,16 @@ let taskId = 1;
             row.remove();
         }
         function toggleNavbar() {
-            document.getElementById('navbar').classList.toggle('hidden');
-            document.getElementById('content').classList.toggle('shifted');
+            const navbar = document.getElementById('navbar');
+            const content = document.getElementById('content');
+            const toggleBtn = document.querySelector('.toggle-nav-btn');
+            navbar.classList.toggle('hidden');
+            content.classList.toggle('shifted');
+            if (navbar.classList.contains('hidden')) {
+                toggleBtn.innerHTML = '☰';
+                toggleBtn.style.left = '10px';
+            } else {
+                toggleBtn.innerHTML = '✖';
+                toggleBtn.style.left = '260px';
+            }
         }
