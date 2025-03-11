@@ -90,3 +90,26 @@ body {
       text-align: center;
   }
 }
+
+
+/* Tbody or table */
+#taskTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#taskTable tbody {
+  text-align: center;
+}
+
+#taskTable td, #taskTable th {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+#taskTable thead th {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Tbody end */
