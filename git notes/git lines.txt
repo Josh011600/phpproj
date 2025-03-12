@@ -1,0 +1,23 @@
+ccto:
+LINK https://appwrite.io/blog/post/10-git-commands-you-should-start-using?ref=dailydev
+
+# Move to another branch
+git switch feature-branch
+
+# Create and switch to a new branch
+git switch -c new-branch
+
+
+# Discard working directory changes
+git restore main.js
+
+# Unstage changes from the index
+git restore --staged main.js
+
+# Enable automatic maintenance
+git maintenance start
+
+# Run cleanup tasks immediately
+git maintenance run
+
+
