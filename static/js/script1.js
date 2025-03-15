@@ -52,3 +52,33 @@ let taskId = 1;
                 toggleBtn.style.left = '260px';
             }
         }
+
+
+/* Toogle navs */
+function toggleContent(pageId) {
+    const pages = document.querySelectorAll('.page');
+    const taskContainer = document.querySelector('.task-container');
+
+    // Hide all content by default
+    pages.forEach(p => p.style.display = 'none');
+    taskContainer.style.display = 'none';
+
+    // Show the selected content
+    if (pageId === 'home') {
+        taskContainer.style.display = 'block';  // Show Task Scheduler
+    } else {
+        const selectedPage = document.getElementById(pageId);
+        if (selectedPage) {
+            selectedPage.style.display = 'block';  // Display selected page
+        } else {
+            console.error(`Page with ID "${pageId}" not found.`);
+        }
+    }
+}
+
+// Default page to show on load
+document.addEventListener('DOMContentLoaded', () => {
+    toggleContent('home');
+});
+
+/*Toogle navs end */

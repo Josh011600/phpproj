@@ -16,34 +16,37 @@
     <nav class="navbar" id="navbar">
         <div class="home">Home</div>
         <ul class="nav-links">
-            <li><a href="#content">Create</a></li>
-            <li><a href="#">Tasks Created</a></li>
-            <li><a href="#">Task Status</a></li>
-            <li><a href="#">View Completed Tasks</a></li>
-            <li><a href="#">View Failed Tasks</a></li>
+            <li><button onclick="showContent('home')">Create</button></li>
+            <li><button onclick="showContent('about')">View Tasks</button></li>
+            <li><button onclick="showContent('contact')">View Completed Tasks</button></li>
+            <li><button onclick="showContent('contact')">View Failed Tasks</button></li>
+            <div id="failedTasks" class="page">This is the Failed Tasks Page.</div>
+
         </ul>
     </nav>
     <div class="content" id="content">
         <h1>Task Scheduler</h1>
-        <div class="task-container">
+        <div class="task-container" class="page" id="home">
             <label for="task" class="label1"><strong>Add Task Schedule</strong></label>
             <input type="text" name="task" class="txtTask" id="add_task" placeholder="Enter task">
             <input id="party" type="datetime-local" name="party-date" value="2025-06-01T08:30" />
             <button class="add_Button" onclick="addTask()">Add Task</button>
+            <h1 class="task_list_title">Task List</h1>
+            <table id="taskTable">
+                <thead>
+                    <tr>
+                        <th>Time and Date Today</th>
+                        <th>ID</th>
+                        <th>Task Name</th>
+                        <th>Scheduled Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
-        <h1 class="task_list_title">Task List</h1>
-        <table id="taskTable">
-            <thead>
-                <tr>
-                    <th>Time and Date Today</th>
-                    <th>ID</th>
-                    <th>Task Name</th>
-                    <th>Scheduled Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
     </div>
+    <div id="about" class="page">This is the About Page.</div>
+        <div id="contact" class="page">Contact us here!</div>
 </body>
 </html>

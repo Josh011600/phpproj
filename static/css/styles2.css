@@ -40,8 +40,8 @@ body {
   text-align: center;
   margin: 10px 0;
 }
-.nav-links a {
-  color: white;
+.nav-links button, .nav-links a {
+  color: rgb(38, 37, 37);
   text-decoration: none;
   padding: 10px;
   display: block;
@@ -113,3 +113,41 @@ body {
 }
 
 /* Tbody end */
+
+.content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Improved transition */
+  position: relative;
+}
+
+.content.shifted {
+  transform: translateX(0);
+  width: 100%;
+}
+
+.navbar {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out; /* Smooth movement */
+}
+
+.navbar.hidden {
+  transform: translateX(-100%);
+}
+
+.task-container,
+.page {
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.page.active, .task-container.active {
+    display: block; /* Show active content */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
