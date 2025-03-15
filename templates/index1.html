@@ -16,21 +16,21 @@
     <nav class="navbar" id="navbar">
         <div class="home">Home</div>
         <ul class="nav-links">
-            <li><button onclick="showContent('home')">Create</button></li>
-            <li><button onclick="showContent('about')">View Tasks</button></li>
-            <li><button onclick="showContent('contact')">View Completed Tasks</button></li>
-            <li><button onclick="showContent('contact')">View Failed Tasks</button></li>
-            <div id="failedTasks" class="page">This is the Failed Tasks Page.</div>
-
+            <li><button onclick="toggleContent('home')">Create</button></li>
+            <li><button onclick="toggleContent('about')">View Tasks</button></li>
+            <li><button onclick="toggleContent('completedTasks')">View Completed Tasks</button></li>
+            <li><button onclick="toggleContent('failedTasks')">View Failed Tasks</button></li>
         </ul>
     </nav>
+    
     <div class="content" id="content">
         <h1>Task Scheduler</h1>
-        <div class="task-container" class="page" id="home">
+        <div class="task-container page" id="home">
             <label for="task" class="label1"><strong>Add Task Schedule</strong></label>
             <input type="text" name="task" class="txtTask" id="add_task" placeholder="Enter task">
             <input id="party" type="datetime-local" name="party-date" value="2025-06-01T08:30" />
             <button class="add_Button" onclick="addTask()">Add Task</button>
+    
             <h1 class="task_list_title">Task List</h1>
             <table id="taskTable">
                 <thead>
@@ -45,8 +45,11 @@
                 <tbody></tbody>
             </table>
         </div>
+    
+        <div id="about" class="page">This is the About Page.</div>
+        <div id="completedTasks" class="page">This is the Completed Tasks Page.</div>
+        <div id="failedTasks" class="page">This is the Failed Tasks Page.</div>
     </div>
-    <div id="about" class="page">This is the About Page.</div>
-        <div id="contact" class="page">Contact us here!</div>
+    
 </body>
 </html>

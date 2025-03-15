@@ -69,7 +69,7 @@ function toggleContent(pageId) {
     } else {
         const selectedPage = document.getElementById(pageId);
         if (selectedPage) {
-            selectedPage.style.display = 'block';  // Display selected page
+            selectedPage.style.display = 'block';
         } else {
             console.error(`Page with ID "${pageId}" not found.`);
         }
