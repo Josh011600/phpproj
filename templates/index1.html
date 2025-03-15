@@ -24,8 +24,9 @@
     </nav>
     
     <div class="content" id="content">
-        <h1>Task Scheduler</h1>
+        
         <div class="task-container page" id="home">
+            
             <label for="task" class="label1"><strong>Add Task Schedule</strong></label>
             <input type="text" name="task" class="txtTask" id="add_task" placeholder="Enter task">
             <input id="party" type="datetime-local" name="party-date" value="2025-06-01T08:30" />
@@ -48,8 +49,23 @@
     
         <div id="about" class="page">This is the About Page.</div>
         <div id="completedTasks" class="page">This is the Completed Tasks Page.</div>
-        <div id="failedTasks" class="page">This is the Failed Tasks Page.</div>
+        <div id="failedTasks" class="page">
+            <h2>Failed Tasks</h2>
+            <table id="taskTable">
+            <thead>
+                <tr>
+                    <th>Time and Date Today</th>
+                    <th>ID</th>
+                    <th>Task Name</th>
+                    <th>Scheduled Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            </table>
+            
+        </div>
     </div>
+    
     
 </body>
 </html>

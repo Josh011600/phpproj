@@ -81,4 +81,55 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleContent('home');
 });
 
+// Function to add tasks
+function addTask() {
+    const taskName = document.getElementById('add_task').value;
+    const scheduleDate = document.getElementById('party').value;
+    const taskTable = document.querySelector('#taskTable tbody');
+
+    if (!taskName || !scheduleDate) {
+        alert('Please fill in both fields before adding a task.');
+        return;
+    }
+
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${new Date().toLocaleString()}</td>
+        <td>${Math.floor(Math.random() * 1000)}</td>
+        <td>${taskName}</td>
+        <td>${scheduleDate}</td>
+        <td>
+            <button class="remove_btn" onclick="removeTask(this)">Remove</button>
+        </td>
+    `;
+
+    taskTable.appendChild(row);
+}
+
+// Function to move removed tasks to "Failed Tasks"
+function removeTask(button) {
+    const row = button.parentElement.parentElement; // Get the row to remove
+    const failedTasksSection = document.getElementById('failedTasks');
+
+    const failedTaskRow = document.createElement('div');
+    failedTaskRow.classList.add('failed-task-item');
+    failedTaskRow.innerHTML = `
+        <table>
+            <tr>
+                <td>${row.children[0].textContent}</td>
+            </tr>
+            <tr>
+                <td>${row.children[3].textContent}</td>
+            </tr>
+            <tr>
+                <td>Failed</td>
+            </tr>
+        </table>
+    `;
+
+    failedTasksSection.appendChild(failedTaskRow); // Move to Failed Tasks
+    row.remove(); // Remove from Task List
+}
+
+
 /*Toogle navs end */
