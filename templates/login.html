@@ -9,7 +9,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/login" method="POST">
+        <form action="/login" method="POST" onsubmit="return redirectToIndex();">
             <div class="input-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -20,7 +20,16 @@
             </div>
             <button type="submit" class="btn">Login</button>
             <button type="button" class="btn" onclick="location.href='/register'">Register</button>
+            
+        
         </form>
     </div>
+    <script>
+        function redirectToIndex() {
+            // Simulate successful login and redirect to index1.html
+            window.location.href = '/index1.html';
+            return false; // Prevent default form submission
+        }
+    </script>
 </body>
 </html>
