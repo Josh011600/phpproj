@@ -2,20 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>javascript testing</title>
+    <title>Hover Button Tooltip</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 4px;
+            position: absolute;
+            bottom: 150%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .button-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    
-
-<p>Call a function once for each array element:</p>
-
-<h1><p id="demo"><br></p></h1>
-
-
-
-    </body>
-    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
-    </html>
+    <div class="button-container">
+        <button class="btn">Click Me</button>
+        <div class="tooltip">This is a sample tooltip</div>
+    </div>
+</body>
+</html>

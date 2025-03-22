@@ -1,263 +1,153 @@
-
-      /*Overall design*/
-      * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-            text-align: center;
-            font-family: system-ui, "Segoe UI", Tahoma;
-            
-        
-        }
- /*Overall design End*/
- table, th, td {
-    
-    border: 2px solid black;
-    margin: 5 5 5 5;
-  }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(240, 240, 240);
-            text-align: center;
-            align-items: center;
-        }
-       /* design for navigation */
-	header {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+body {
+  font-family: Arial, sans-serif;
   display: flex;
-  width: 100%;
-  background-color: aliceblue;
+  height: 100vh;
+  transition: margin-left 0.3s ease-in-out;
 }
-
-header > * {
-/*   flex-grow: 1; */
-}
-
-header h1 {
-  margin-left: 1rem;
-}
-
-header a {
-  text-decoration: none;
-}
-
-/* "Hide" checkbox -- moves it off screen*/
-#menu-btn {
-  position: absolute;
-  top: -100%;
-  left: -100%;
-}
-
-/* Hide hamburger for bigger screens */
-.menu-icon {
-  visibility: hidden;
-}
-
-.menu {
+.navbar {
+  width: 250px;
+  background: #333;
+  color: white;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  max-width: 250px;
-  margin-right: 2rem;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
 }
-
-
-/* Set width for mobile/smaller screen size. */
-/* I set it big here so I don't have to shrink the screen so much */
-/* for testing purposes 
-@media screen and (max-width: 1100px) {
-  
-  header {
-    display: grid;
-    grid-template-areas:
-       "title   title   hamburger"
-       "nav     nav     nav";
+.navbar.hidden {
+  transform: translateX(-100%);
+}
+.navbar .home {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.nav-links {
+  list-style: none;
+  width: 100%;
+}
+.nav-links li {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+.nav-links button, .nav-links a {
+  color: rgb(38, 37, 37);
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  width: 100%;
+}
+.nav-links a:hover {
+  background: #555;
+  border-radius: 4px;
+}
+.toggle-nav-btn {
+  position: fixed;
+  top: 20px;
+  left: 260px;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+  transition: left 0.3s ease-in-out;
+}
+.toggle-nav-btn:hover {
+  background: #555;
+}
+.content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 20px;
+  text-align: center;
+  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+.content.shifted {
+  margin-left: 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .navbar {
+      width: 70%;
   }
-  
-  h1 {
-    grid-area: title;
+  .toggle-nav-btn {
+      left: 72%;
   }
-  
-  .menu a {
-    text-decoration: none;
-    color: black;
-  }
-
-  .menu-btn {
-    display: none;
-  }
-
-  .menu-icon {
-    grid-area: hamburger;
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    padding: 30px 20px 30px 0;
-    position: relative;
-    user-select: none;
-    visibility: visible;
-  }
-
-  .navicon {
-    background: #333;
-    display: block;
-    height: 2px;
-    width: 18px;
-    position: relative;
-  }
-
-  .navicon:before {
-    top: 5px;
-  }
-
-  .navicon:after {
-    top: -5px;
-  }
-
-  .navicon:before, .navicon:after {
-    background: #333;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: absolute;
-    transition: all .2s ease-out;
-  }
-
-  .menu {
-    grid-area: nav;
-    max-width: unset;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .menu a {
-    padding: 20px 20px;
-    border-right: 1px solid #f4f4f4;
-    background-color: #eee;
-    width: 100%;
-    text-align: center;
-  }
-
-  .menu-btn:checked ~ .menu {
-    max-height: 240px;
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
-  }
-
-  .menu-btn:checked ~ .menu-icon .navicon:before,
-  .menu-btn:checked ~ .menu-icon .navicon:after {
-    top: 0;
+  .content {
+      width: 100%;
+      margin-left: 0;
+      text-align: center;
   }
 }
 
 
-*/
-/* navigation bar design */
+/* Tbody or table */
+#taskTable {
+  width: 100%;
+  border-collapse: collapse;
+}
 
+#taskTable tbody {
+  text-align: center;
+}
 
-       .heading{
-        color: rgb(145, 22, 22);
-        margin-top: 15%;
-       }
-       .heading:hover{
-        opacity: 0.5;
-       
-       }
-       .container
-       {
-        border-style: solid;
-       }
-       .label1
-       {
-        font-size: 2em;
-        
-       }
-       
-       .add_Button
-       {
-        font-size: 2em;
-	max-width: 4em;
-	padding: 1rem;
-       }
-       .add_Button:hover
-       {
-       
-        opacity: 0.7;
-        background-color: aquamarine;
-       }
-       .label1, .text_Box1, .add_Button{
-        margin-top: .5em;
-        margin-bottom: 0.3em;
-       }
-	.txtTask {
-	font-size: 2em;
-	}
-       /* for time and date*/
+#taskTable td, #taskTable th {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
 
-       .container {
-        padding: 20px;
-        background-color: #b6bfd4;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        margin: auto;
-    }
-    #datetime {
-        font-size: 0.5em;
-        font-weight: bold;
-    }
-     /* for time and date end*/
+#taskTable thead th {
+  background-color: #333;
+  color: #fff;
+}
 
+/* Tbody end */
 
-     /* for table design*/
-     #taskTable
-     {
-        font-size: 2em;
-	      border-width: thin;
-        max-width: 100%;
-        margin: auto;
-     }
+.content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Improved transition */
+  position: relative;
+}
 
-     /*table design end */
-     /*table TD design*/
-     .td, input {
-      font-size: 1em;
-     }
-      /*table TD design end*/
+.content.shifted {
+  transform: translateX(0);
+  width: 100%;
+}
 
-      /*td buttons design*/
-      .done_btn{
-        font-size: 1em;
-        margin: auto;
-      }
-      .edit_btn{
-        font-size: 1em;
-        margin: auto;
-      }
-      .remove_btn{
-        font-size: 1em;
-        margin: auto;
-      }
-      .clear_btn{
-        font-size: 1em;
-        margin: auto;
-      }
-      /*td buttons design end*/
+.navbar {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out; /* Smooth movement */
+}
+
+.navbar.hidden {
+  transform: translateX(-100%);
+}
+
+.task-container,
+.page {
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.page.active, .task-container.active {
+    display: block; /* Show active content */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
