@@ -31,7 +31,7 @@ def login():
         else:
             flash('Invalid username or password.', 'error')
 
-    return render_template('login.html')
+    return render_template('index1.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
