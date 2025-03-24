@@ -57,13 +57,13 @@ def login():
         else:
             flash('Invalid username or password.', 'danger')
 
-    return render_template('index1.html')
+    return render_template('login.html')
 
 
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('index1.html')
+    return render_template('dashboard.html')
 
 
 
