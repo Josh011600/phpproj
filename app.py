@@ -1,37 +1,22 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 import sqlite3
+import hashlib
+import os
 from werkzeug.security import generate_password_hash, check_password_hash
-
+currentdirectory = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
+
 app.secret_key = 'your_secret_key'  # For flash messages
 
 # Database connection
 def get_db_connection():
-    try:
-        conn = sqlite3.connect('db1.db', check_same_thread=False)
-        conn.row_factory = sqlite3.Row
-        return conn
-    except sqlite3.Error as e:
-        print(f"Database error: {e}")
-        return None
+    conn = sqlite3.connect('db1.db')
+    conn.row_factory = sqlite3.Row
+    return conn
 
-@app.route('/', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
-
-        conn = get_db_connection()
-        user = conn.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
-        conn.close()
-
-        if user and check_password_hash(user['password'], password):
-            flash('Login successful!', 'success')
-            return redirect(url_for('dashboard'))
-        else:
-            flash('Invalid username or password.', 'error')
-
-    return render_template('index1.html')
+@app.route('/')
+def main():
+    return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -55,23 +40,32 @@ def register():
 
     return render_template('register.html')
 
-@app.route('/dashboard')
-def dashboard():
-    return render_template('index1.html')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = hashlib.sha256(request.form['password'].encode()).hexdigest()
 
-def init_db():
-    conn = get_db_connection()
-    if conn:
-        conn.execute('''
-            CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT NOT NULL UNIQUE,
-                password TEXT NOT NULL
-            )
-        ''')
-        conn.commit()
+        conn = get_db_connection()
+        user = conn.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password)).fetchone()
         conn.close()
 
+        if user:
+            session['user_id'] = user['id']
+            flash('Login successful!', 'success')
+            return redirect(url_for('dashboard'))
+        else:
+            flash('Invalid username or password.', 'danger')
+
+    return render_template('login.html')
+
+
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+
+
 if __name__ == '__main__':
-    init_db()
     app.run(debug=True)
