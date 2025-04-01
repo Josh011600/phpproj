@@ -1,18 +1,18 @@
-from flask import Flask, render_template
-import sqlite3
+from flask import Flask, render_template, request, redirect, url_for, session
+from flask_mysqldb import MySQL
+from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
+@app.route('/test_db')
+def test_db():
+    try:
+        cursor = mysql.connection.cursor()
+        cursor.execute("SHOW TABLES;")
+        tables = cursor.fetchall()
+        cursor.close()
+        return f"Connected! Tables: {tables}"
+    except Exception as e:
+        return f"Database connection failed: {e}"
 
-
-# Create a SQL connection to our SQLite database
-con = sqlite3.connect("data/db1.db")
-
-cur = con.cursor()
-
-# The result of a "cursor.execute" can be iterated over by row
-for row in cur.execute('SELECT * FROM users;'):
-    print(row)
-
-# Be sure to close the connection
-con.close()
-
-
+if __name__ == '__main__':
+    app.run(debug=True)
