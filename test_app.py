@@ -13,6 +13,32 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'  # Use dictionary cursor for bett
 
 mysql = MySQL(app)
 
+def get_all_tasks_from_db():
+    # Connect to MySQL
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",           # Default XAMPP MySQL user
+        password="",           # Leave empty unless you set a password
+        database="mydb"
+    )
+    
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT id, name, date FROM users")
+    tasks = cursor.fetchall()
+    
+    cursor.close()
+    conn.close()
+    return tasks
+
+@app.route('/view')
+def view_tasks():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT id, task_name, scheduled_date, created_at FROM tasks")
+    tasks = cursor.fetchall()
+    cursor.close()
+    return render_template("view.html", tasks=tasks)
+
+
 @app.route('/')
 def index():
     return render_template('test.html')
@@ -40,6 +66,10 @@ def dashboard():
     if 'loggedin' in session:
         return render_template('dashboard.html', username=session['username'])
     return redirect(url_for('index'))
+
+
+
+
 
 @app.route('/logout')
 def logout():
