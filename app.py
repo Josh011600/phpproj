@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import sqlite3
-import hashlib
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
 currentdirectory = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
 
-app.secret_key = 'your_secret_key'  # For flash messages
+app.secret_key = os.urandom(24)  # For flash messages
 
 # Database connection
 def get_db_connection():
@@ -14,9 +13,10 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-@app.route('/')
-def main():
-    return render_template('login.html')
+
+
+
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -40,31 +40,40 @@ def register():
 
     return render_template('register.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+#login function
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
-        password = hashlib.sha256(request.form['password'].encode()).hexdigest()
+        password = request.form['password']  # Get the plain password
 
         conn = get_db_connection()
-        user = conn.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password)).fetchone()
+        user = conn.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
         conn.close()
 
-        if user:
+        print("User  fetched from DB:", user)  # Debugging line
+
+        if user and check_password_hash(user['password'], password):  # Check hashed password
             session['user_id'] = user['id']
             flash('Login successful!', 'success')
             return redirect(url_for('dashboard'))
         else:
             flash('Invalid username or password.', 'danger')
 
-    return render_template('login.html')
+    return render_template('login.html', users=[])
 
 
-
+#proceed to dashboard
 @app.route('/dashboard')
 def dashboard():
     return render_template('dashboard.html')
 
+
+@app.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    flash('Logged out successfully.', 'info')
+    return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
