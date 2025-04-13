@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Scheduler</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}">
-    <script src="{{ url_for('static', filename='js/script1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/testscript.js') }}"></script>
     <style>
        
     </style>
@@ -20,6 +20,7 @@
             <li><button onclick="toggleContent('about')">View Tasks</button></li>
             <li><button onclick="toggleContent('completedTasks')">View Completed Tasks</button></li>
             <li><button onclick="toggleContent('failedTasks')">View Failed Tasks</button></li>
+            <li><button onclick="toggleContent('Logout')">Logout</button></li>
         </ul>
     </nav>
     
@@ -36,7 +37,7 @@
             <table id="taskTable">
                 <thead>
                     <tr>
-                        <th>Time and Date Today</th>
+                        <th>Time and Date</th>
                         <th>ID</th>
                         <th>Task Name</th>
                         <th>Scheduled Date</th>
