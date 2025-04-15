@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_mysqldb import MySQL
+import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -68,14 +69,21 @@ def dashboard():
     return redirect(url_for('index'))
 
 
-
-
-
 @app.route('/logout')
 def logout():
     session.pop('loggedin', None)
     session.pop('username', None)
     return redirect(url_for('index'))
+
+
+#for retrieving data from database
+@app.route('/api/data')
+def get_data():
+    data = {"message": "Hello, JSON!"}
+    return jsonify(data)
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

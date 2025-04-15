@@ -14,10 +14,6 @@ def get_db_connection():
     return conn
 
 
-
-
-
-
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
