@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-    <link rel="stylesheet" href="static/css/login.css">
 </head>
 <body>
     <div class="login-container">
@@ -31,8 +30,15 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
+            <!-- Optional Remember Me checkbox -->
+            <div class="input-group">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember Me</label>
+            </div>
             <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn" onclick="location.href='/register'">Register</button>
         </form>
     </div>
+        
 </body>
 </html>

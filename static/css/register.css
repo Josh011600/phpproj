@@ -1,27 +1,27 @@
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: #617265;
+    color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: #fff;
 }
 
 .register-form {
-    background: rgba(255, 255, 255, 0.9);
+    background: #1e1e1e;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    width: 350px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    width: 360px;
     animation: fadeIn 0.8s ease-in-out;
 }
 
 .register-form h2 {
     margin-bottom: 25px;
     font-size: 26px;
-    color: #333;
+    color: #ffffff;
     text-align: center;
     font-weight: 600;
 }
@@ -33,50 +33,34 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 600;
-    color: #444;
+    font-weight: 500;
+    color: #cccccc;
 }
 
 .form-group input {
-    width: 93%;
+    width: 98%; /* Full width inside the form-group */
     padding: 12px;
-    border: 1px solid #ddd;
+    background: #2a2a2a;
+    color: #f0f0f0;
+    border: 1px solid #444;
     border-radius: 6px;
     font-size: 15px;
-    transition: border-color 0.3s ease;
-}
-.back-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #fff;
-    color: #6a11cb;
-    border: 2px solid #6a11cb;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.back-btn:hover {
-    background: #6a11cb;
-    color: #fff;
-}
 
 .form-group input:focus {
-    border-color: #6a11cb;
+    border-color: #00bcd4;
     outline: none;
-    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+    background: #333;
+    box-shadow: 0 0 6px rgba(0, 188, 212, 0.4);
 }
 
 .register-btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
+    background: #00bcd4;
+    color: #ffffff;
     border: none;
     border-radius: 6px;
     font-size: 18px;
@@ -86,7 +70,28 @@ body {
 }
 
 .register-btn:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    background: #0097a7;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #00bcd4;
+    border: 2px solid #00bcd4;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #00bcd4;
+    color: #121212;
 }
 
 @keyframes fadeIn {
