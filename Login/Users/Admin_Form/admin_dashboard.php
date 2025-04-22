@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin - User Management</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_dashboard.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Login/CSS/admin_dashboard.css') }}">
   
 </head>
 <body>

@@ -35,7 +35,7 @@
 
 <?php
 session_start();
-require 'db/connection.php';
+require 'Connection/connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
@@ -54,9 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Redirect based on role
         if ($user['role'] === 'admin') {
-            header("Location: admin/dashboard.php");
+            header("Location: Users/Admin_Form/admin_dashboard.php");
         } else {
-            header("Location: user/dashboard.php");
+            header("Location: Users/User_Form/dashboard.php");
         }
         exit;
     } else {
