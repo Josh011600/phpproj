@@ -13,7 +13,7 @@
        
         
 
-        <form method="POST" action="{{ url_for('login') }}">
+        <form method="POST" action="login.php">
             <div class="input-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -32,3 +32,40 @@
     </div>
 </body>
 </html>
+
+<?php
+session_start();
+require 'db/connection.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    $stmt = $mysqli->prepare("SELECT username, role FROM users WHERE username = ? AND password = ?");
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
+
+        // Redirect based on role
+        if ($user['role'] === 'admin') {
+            header("Location: admin/dashboard.php");
+        } else {
+            header("Location: user/dashboard.php");
+        }
+        exit;
+    } else {
+        $error = "Invalid username or password.";
+    }
+
+    $stmt->close();
+    $mysqli->close();
+}
+?>
+
+
