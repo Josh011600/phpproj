@@ -3,42 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/testing.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-    
-        <!-- Flash messages -->
-        {% with messages = get_flashed_messages(with_categories=True) %}
-            {% if messages %}
-                <ul class="flashes">
-                {% for category, message in messages %}
-                    <li class="{{ category }}">{{ message }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
-    
-        <form method="POST" action="{{ url_for('login') }}">
-            <div class="input-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <!-- Optional Remember Me checkbox -->
-            <div class="input-group">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember Me</label>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn" onclick="location.href='/register'">Register</button>
-        </form>
-    </div>
+    <!--Started Learning Php 4/26/2024 ->
+   <?php
+   $bookName = "Dark Matter";
+   $read = true;
+   $message = "you have read";
+   ?>
+        <h1>
+        <?php
+        if($read === true)
+        {
+            echo $message . $bookName;
+        }
+        else
+        {
+            echo "You didn't read " . $bookName;
+        }
+        ?>
+<?= $message ?>
+        </h1>
         
 </body>
 </html>
