@@ -1,0 +1,4 @@
+https://carpentry.library.ucsb.edu/2021-08-23-ucsb-python-online/09-working-with-sql/index.html
+
+
+https://www.tutorialspoint.com/sqlite/sqlite_python.htm#:~:text=in%20Python%20programs.-,Installation,along%20with%20Python%20version%202.5.
