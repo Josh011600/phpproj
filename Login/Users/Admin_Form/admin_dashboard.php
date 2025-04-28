@@ -5,42 +5,58 @@
   <title>Admin - User Management</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_dashboard.css') }}">
   
+  <link rel="stylesheet" href="css/admin_dashboard.css">
 </head>
 <body>
 
 <div class="container">
   <h2>Add New User</h2>
   <form id="userForm">
+  <div class="form-group">
     <label for="name">Full Name</label>
     <input type="text" id="name" name="name" required>
+  </div>
 
+  <div class="form-group">
     <label for="age">Age</label>
     <input type="number" id="age" name="age">
+  </div>
 
+  <div class="form-group">
     <label for="email">Email</label>
     <input type="email" id="email" name="email">
+  </div>
 
+  <div class="form-group">
     <label for="username">Username</label>
     <input type="text" id="username" name="username">
+  </div>
 
+  <div class="form-group">
     <label for="password">Password</label>
     <input type="password" id="password" name="password">
+  </div>
 
+  <div class="form-group">
     <label for="role">Role</label>
     <select id="role" name="role">
       <option value="user">User</option>
       <option value="admin">Admin</option>
     </select>
+  </div>
 
+  <div class="form-group">
     <label for="status">Status</label>
     <select id="status" name="status">
       <option value="active">Active</option>
       <option value="inactive">Inactive</option>
     </select>
+  </div>
 
-    <div class="error" id="errorMsg"></div>
-    <button type="submit">Add User</button>
-  </form>
+  <div class="error" id="errorMsg"></div>
+  <button type="submit">Add User</button>
+</form>
+
 
   <h2>User List</h2>
   <table id="userTable">
@@ -62,7 +78,7 @@
 </div>
 
 <script>
-  let userCount = 0;
+/*  let userCount = 0;
 
   document.getElementById('userForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -106,7 +122,7 @@
 
     // Reset the form
     document.getElementById('userForm').reset();
-  });
+  });*/
 </script>
 
 </body>
